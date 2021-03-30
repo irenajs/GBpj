@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. Дан код:
+
+        var a = 1, b = 1, c, d;
+        c = ++a; alert(c); //2 префиксная форма возвращает новое значение увеличивая на один
+        d = b++; alert(d); //1 постфикс увеличивает значение переменной на еденицу, и возвращает старое значение
+        c = (2 + ++a); alert(c);//5 значение выражения увеличино на один
+        d = (2 + b++); alert(d);//4 
+        alert(a);//3
+        alert(b);//3
+
+        // 2. Чему равен x?
+        var a = 2;
+        var x = 1 + (a *= 2);
+        alert(x);//5
+
+        // 3.
+        var a = prompt("Введите первое число");
+        var b = prompt("Введите второе число")
+        if (a >= 0 && b >= 0) {
+            alert(a - b);
+        }
+        else if (a < 0 && b < 0) {
+            alert(a * b);
+        }
+        else if (a >= 0 && b >= 0 || a < 0 && b < 0) {
+            alert(a + b);
+        } //так и не догнала почему он склеивает значения переменных, а не считает их
+
+        // 4.
+
+        var a = prompt("введите число от 0 до 15");
+
+        function f(n) {
+            console.log(n);
+            if (n == a) {
+                return;
+            }
+            f(n - 1);
+        }
+        f(15); // если пишу функцию именно так, то без проблем выводит в консоли значения от а до конечной точки, через switch так и не получилось, понимаю что что-то упускаю, но пока так и не поняла что))
+
+        
+        // 5. Заданеи
+
+        function calc(a, b) {
+            if ("+") {
+                return (a + b);
+            }
+            else if ('-') {
+                return (a - b);
+            }
+            else if ("*") {
+                return (a * b);
+            }
+            else if ("/") {
+                return (a / b);
+            }
+        }
+
+        // 6. Задание.
+
+        var arg1 = prompt('Введите первое число')
+        var arg2 = prompt('Ведите второе число')
+        var operation = prompt('Ведите знак математической операции')
+
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case '+':
+                    arg1 + arg2;
+                    alert(arg1 + arg2)
+                    break;
+                case '-':
+                    arg1 - arg2;
+                    break;
+                case '*':
+                    arg1 * arg2;
+                    break;
+                case '/':
+                    arg1 / arg2;
+                    break;
+            }
+
+        }
+
+        // 8. Задание.
+        function power (val, pow){
+            return(pow == 1) ? val :(val * power(val, pow - 1));
+        }
+        alert(power(7, 3));// 343
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
