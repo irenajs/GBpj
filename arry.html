@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // 1. Задание. 
+
+        var n = 2;
+
+        function f(a) {
+            var i = 2;
+
+            while (i < a / 2) {
+                if (a % i == 0) {
+                    return false;
+                }
+                i++
+            }
+            return true;
+        }
+        while (n <= 100) {
+            if (f(n)) {
+                console.log(n);
+            }
+            n++;
+        }
+
+
+
+        // 2-3 Задание.
+
+        var basket = [
+            {
+                title: "носки хлопковые",
+                price: 500,
+                county: 5
+            },
+
+            {
+                title: "футболка",
+                price: 500,
+                county: 2
+            },
+
+            {
+                title: "брюки",
+                price: 2000,
+                county: 2
+            }
+        ];
+
+        function countBasketPrice(arr) {
+            var totalBasket = 0;
+            for (var item of arr) {
+                totalBasket += (item.price * item.county)
+                document.write(item.title + " стоимость = " + item.price + "<hr>");
+            }
+            return totalBasket
+        }
+        console.log(countBasketPrice(basket))
+
+
+        // 4. Задание
+
+        for (var i = 0; i < 9; i++) { } // в данном написании цикл выдаст сразу 9, если не ставить фигурные скобки, то цикл прокрутит весь счетчик от 0-9 через alert
+        alert(i)
+
+        // 5. Задание
+
+        var arr = [];
+        var end = 0;
+        while (end < 20) {
+            end++;
+            arr.push('x');
+            console.log(arr);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
