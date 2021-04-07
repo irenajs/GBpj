@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. Задание
+        var getNumber = parseInt(prompt('Введите число от 0 до 999'));
+        var user = {
+            number: Math.round(Math.random() * getNumber);
+            units: 0,
+            tens: 0,
+            hundreds: 0,
+        };
+        if (user.number <= 9) {
+            user.units = user.number;
+        } else if (user.number <= 999) {
+            user.units = Math.floor(user.number % 10);
+            user.tens = Math.floor(user.number / 10 % 10);
+            user.hundreds = Math.floor(user.number / 100 % 10);
+        } else {
+            user.number > 999;
+            console.log('Вы ввели число привышающее предельное значение');
+        }
+        console.log(user);
+
+        // 2. Задание Викторина.
+
+        var userAnswer = [];
+        function isAnswer(q, event) {
+            if (isNaN(event) || !isFinite(event)) {
+                alert("Вы ввели неверный символ");
+                returne false;
+            }
+            else if (event < 1 || event > q) {
+                alert("Ваше чсило выходит за пределы допустимых значений");
+                return false;
+            }
+            return true;
+        }
+        function answer(q, answer1, answer2) {
+            var ok = false;
+            do {
+                event = +prompt(q + answer1 + answer2 + "-1 - Выход из игры");
+                if (event == -1) {
+                    return -1;
+                }
+                else if{
+                    ok = isAnswer(works.a0, event);
+                }    
+            }
+            while (!ok);
+            switch (event) {
+                case 1: record.push([q, answer1]);
+                    break;
+                case 2: record.push([q, answer2]);
+                    break;
+                case -1: record.push([q, "Вы вышли из игры"]);
+                    break
+            }
+            return event;
+        }
+        switch (answer(works.a00, works.a1, works.a2)) {
+            case 1:
+                switch (answer(works.b00, works.b1, works.b2)) {
+                    case 1:
+                    case 2:
+                        answer(works.d00, works.d1, works.b2);
+                        break;
+                    case -1:
+                    default:
+                        alert("Ошибка");
+                }
+                break;
+            case 2:
+                switch (answer(works.c00, works.c1, works.c2)) {
+                    case 1:
+                    case 2:
+                        answer(works.d00, works.d1, works.d2);
+                        break;
+                    case -1:
+                        break;
+                    default;
+                        alert("Ошибка");
+                }
+                break;
+            case -1:
+                break;
+            default;
+                alert("Ошибка");
+        }
+        alert("Спасибо за игру");
+        console.log(record);
+        var step = +prompt("Введите номер хода");
+        console.log(step);
+        var stepHistory = ("В вопросе №" + step + " " + record[step - 1][0] + "Вы выбрали вариант" + record[step - 1][1]);
+        alert(stepHistory);
+
+
+        // 3. Задание
+
+        alert("Добро пожаловать в игру «Кто хочет стать миллионером?»");
+
+        var questionCards = [
+
+            'Является ли элемент «else» обязательным в конструкции условия?',
+            'Укажите имя функции округления вверх.',
+            'Каким методом можно получить данные, введенные пользователем?',
+            'Какое из перечисленных ниже слов не является зарезервированным словом в JavaScript?',
+            'Какой метод удаляет последний элемент массива?',
+            'Какой из указанных методов добавляет элемент в конец массива?',
+            'Сколько разных ключевых слов для описания циклов доступно в javascript?',
+            'Сколько параметров можно передать функции',
+            'Какая арифметическая операция приводит к ошибке в javascript:',
+            'Яблоко стоит 1.15, апельсин стоит 2.30. Сколько стоят они вместе – чему равна сумма 1.15 + 2.30 с точки зрения JavaScript?'];
+
+        var score = [1000, 3000, 5000, 'первую несгораемую сумму 10000', 20000, 60000, 80000,
+            'вторую несгораемую сумму 100000', 500000, 1000000];
+
+        var answers = [
+            ['A:  Да  B:  Нет C: Зависит от версии JavaScript  D: В разных браузерах по разному '],
+            ['A:  Ceil B:  Math.ceil C:  math.ceil D:  math.ceil()'],
+            ['A:  alert B:  confirm C:  prompt  D:  message'],
+            ['A:  default B:  throw C:  finally D:  undefined'],
+            ['A:  push  B:  pop  C:  shift D:  unshift'],
+            ['A:  push  B:  pop  C:  shift D:  unshift'],
+            ['A:  одно: for B:  два: for и while C:  три: for, while и do...while  D:  четыре: for, while, do while и for each '],
+            ['A:  сколько указано в определении функции или меньше B:  любое количество C:  ровно столько, сколько указано в определении функции  D:  нисколько '],
+            ['A:  корень из отрицательного числа  B:  деление на ноль C:  умножение на ноль D:  таких операций нет '],
+            ['A:  345  B:  3.45  C:  3,45  D:  ни один из перечисленных вариантов'],
+        ];
+
+        var correct = ['B', 'B', 'C', 'D', 'B', 'A', 'C', 'B', 'D', 'D'];
+
+        var a = 0;
+        var b = 1;
+        for (var i = 0; i < 10; i++) {
+            var answer = prompt('Вопрос  ' + b + ': ' + questionCards[i] + '\r\n' + ' Варианты ответа: \r\n' + answers[0] + '\r\n' + ' Ваш ответ?');
+            if (answer.toUpperCase() == correct[0]) {
+                alert('Поздравляем, вы заработали' + '\r\n' + score[a] + ' рублей');
+                a++;
+                b++;
+                answers.shift(0);
+                correct.shift(0);
+            } else if (score[a] >= 100000) {
+                alert('Ответ неверный. Вы выиграли ' + score[7] + ' рублей');
+                break;
+            } else if (score[a] >= 10000) {
+                alert('Ответ неверный. Вы выиграли ' + score[3] + ' рублей');
+                break;
+            } else {
+                alert('Ответ неверный');
+                break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
