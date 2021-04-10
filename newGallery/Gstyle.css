@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+	height: inherit;;
+  width: inherit;
+}
+#gallery {
+        display: flex;
+        justify-content: space-between;
+        padding: 60px;
+        background-color: lightblue;
+    }
+
+#big_picture img {
+	margin: 0 auto;
+}
+
+#previous {
+	fill: crimson;
+	margin: 0 0 0 60px;
+}
+
+#next {
+	fill: crimson;
+	margin: 0 60px 0 0;
+}
+
+#previous:hover,
+#next:hover {
+	fill: coral;
+    opacity: 1;
+  transition: 0.3s opacity;
+  position: absolute;
+}
+
+#image_1, #image_2, #image_3 {
+	margin: 0px;    
+	
+}
